@@ -25,6 +25,7 @@ namespace Service
                 , PlayerType.MassiveRetaliation
                 , PlayerType.RandomMan
                 , PlayerType.Jesus
+                , PlayerType.Quant
             };
 
             var gameData = new List<GameData>();
@@ -59,12 +60,13 @@ namespace Service
                 name = game.Player2Name; 
                 if (!playersScore.ContainsKey(name))
                 {
+
                     playersScore.Add(  name,  game.Player2Score  );
                 }
                 else
                 {
                     int score = playersScore[name];
-                    playersScore[name] = score+ game.Player1Score;
+                    playersScore[name] = score+ game.Player2Score;
                 }
 
             }
